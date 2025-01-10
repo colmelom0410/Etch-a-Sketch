@@ -1,13 +1,15 @@
 
+//Create grids depends on the user's input
 function createDiv(userInput){
+    //
     for(let i = 1; i <= userInput; i++){
-        const column = document.createElement("div");
-        column.classList.add("column");
-        container.appendChild(column);
+        const row = document.createElement("div");
+        row.classList.add("row");
+        container.appendChild(row);
         for(let j = 1; j <= userInput; j++ ){
             const grid = document.createElement("div");
             grid.classList.add("grid");
-            column.appendChild(grid);
+            row.appendChild(grid);
         }
         
     }
@@ -15,6 +17,7 @@ function createDiv(userInput){
     grids.forEach(grid => {
     grid.addEventListener("mouseover", () => {
         grid.style.backgroundColor = getRandomColor();
+        grid.style.opacity = parseFloat(grid.style.opacity || 0.1) + 0.1;
     });
 })
 }
@@ -26,12 +29,11 @@ function getUserInput(){
         userInput = 16;
     }
     const grids = document.querySelectorAll(".grid");
-    const columns = document.querySelectorAll(".column");
-    columns.forEach(column => { column.remove()});
+    const rows = document.querySelectorAll(".row");
+    rows.forEach(row => { row.remove()});
     grids.forEach(grid => {grid.remove()});
     createDiv(userInput);
 }
-
 function getRandomColor(){
     const red = Math.floor(Math.random()*255)+1;
     const green = Math.floor(Math.random()*255)+1;
