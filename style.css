@@ -1,0 +1,43 @@
+body{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+    gap: 1px;
+    width: 960px;
+}
+.grid {
+    border: 1px solid green;
+    width: 20px;
+    height: 20px;
+;
+}
+.column{
+    display: flex;
+    gap: 1px;
+    border: 1px solid blue;
+}
+
+.grid:hover{
+    background-color: green;
+}
+
+button{
+    background-color: #4CAF50;
+    color: white;   
+    border: none;   
+    padding: 5px 10px;  
+    font-size: 16px; 
+    cursor: pointer;
+    border-radius: 5px;
+    
+}
+button:hover{
+    background-color: green;
+}
