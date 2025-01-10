@@ -1,28 +1,30 @@
 body{
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1px;
+    border: 1px solid black;
+    width: 960px;
+    height: 570px;
 }
 .grid {
-    border: 1px solid green;
+    border-left: 1px solid black;
     width: 20px;
     height: 20px;
 ;
 }
 .column{
     display: flex;
-    gap: 1px;
+    border: 1px solid black;
+    border-left: 0;
 }
 
-.grid:hover{
-    background-color: green;
-}
 
 button{
     background-color: #4CAF50;

@@ -1,11 +1,4 @@
 
-const container = document.querySelector(".container");
-const inputButton = document.createElement("button");
-inputButton.addEventListener("click", getUserInput);
-container.appendChild(inputButton);
-inputButton.textContent = "input";
-
-
 function createDiv(userInput){
     for(let i = 1; i <= userInput; i++){
         const column = document.createElement("div");
@@ -18,6 +11,12 @@ function createDiv(userInput){
         }
         
     }
+    const grids = document.querySelectorAll(".grid");
+    grids.forEach(grid => {
+    grid.addEventListener("mouseover", () => {
+        grid.style.backgroundColor = getRandomColor();
+    });
+})
 }
 
 function getUserInput(){
@@ -32,5 +31,23 @@ function getUserInput(){
     grids.forEach(grid => {grid.remove()});
     createDiv(userInput);
 }
+
+function getRandomColor(){
+    const red = Math.floor(Math.random()*255)+1;
+    const green = Math.floor(Math.random()*255)+1;
+    const blue = Math.floor(Math.random()*255)+1;
+
+    return `rgb(${red},${green},${blue})`;
+}
+
+
+
+
+const container = document.querySelector(".container");
+const inputButton = document.createElement("button");
+inputButton.addEventListener("click", getUserInput);
+document.body.insertBefore(inputButton,container);
+inputButton.textContent = "Generate Grid";
+
 
 createDiv(16);
