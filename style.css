@@ -1,16 +1,13 @@
 body{
     display: flex;
     justify-content: center;
-    height: 100vh;
 }
 .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
     gap: 1px;
-    width: 960px;
 }
 .grid {
     border: 1px solid green;
@@ -21,7 +18,6 @@ body{
 .column{
     display: flex;
     gap: 1px;
-    border: 1px solid blue;
 }
 
 .grid:hover{
